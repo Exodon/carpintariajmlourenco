@@ -1,0 +1,30 @@
+.header {
+    @apply flex justify-between mx-auto py-4 px-4;
+    background: white;
+    max-width: 1280px;
+    height: 85px;
+    
+    
+    .logo {
+        height: 80px;
+        
+        @screen md {
+            height: 120px;
+        }
+    }
+    
+    
+    &.is-sticky {
+        top: 0;
+        position: sticky;
+        width: 100%;
+        border-bottom: 1px solid gray;
+        max-width: none;
+        z-index: 1;
+
+        .logo {
+            height: 60px;
+        }
+    }
+}
+

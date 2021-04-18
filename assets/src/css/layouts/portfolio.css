@@ -1,0 +1,16 @@
+.portfolio__items {
+    @apply flex flex-col justify-center;
+}
+
+@screen md {
+    
+    .portfolio__items {
+        @apply flex-row;
+    }
+}
+
+.portfolio__image {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}

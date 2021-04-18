@@ -1,0 +1,22 @@
+.portfolio__item {
+    background-color: #FFFFFF;
+
+    &--active {
+        background-color: $override-color-primary;
+        color: #FFFFFF;
+    }
+}
+
+
+.portfolio__item-project {
+
+    span {
+        color: $override-color-primary;
+    }
+}
+
+.portfolio__item--active .portfolio__item-project {
+    span {
+        color: #FFFFFF;
+    }
+}

@@ -1,0 +1,64 @@
+<section id="portfolio" class="portfolio section bg-gray">
+    <div class="container mx-auto">
+        <h2 class="section__title text-center mb-16" data-sal="fade" data-sal-easing="ease-in-cubic">{{ this.theme.pricing_title }}</h2>
+        <div class="portfolio__items">
+            {% if (this.theme.pricing_plans|length > 0) %}
+                {% for plan in this.theme.pricing_plans %}
+                    <div class="portfolio__item {{ plan.highlighted ? 'portfolio__item--active' }}" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                        <div class="portfolio__item-content">
+                            <h3 class="portfolio__item-title">{{ plan.plan_title }}</h3>
+                            <p class="portfolio__item-project"><span>{{ plan.currency }}</span><span>{{ plan.price }}</span>/{{ plan.plan_type }}</p>
+                            <ul class="portfolio__item-features">
+                                {% for feature in plan.plan_features|split(',') %}
+                                    <li>{{ feature }}</li>
+                                {% endfor %} 
+                            </ul>
+                        </div>
+                        <a href="{{ plan.button_url }}" class="btn {{ plan.highlighted ? '': 'btn--primary'}}">{{ plan.button_text }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="portfolio__item" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                    <div class="portfolio__item-content">
+                        <h3 class="portfolio__item-title">Projecto A</h3>
+                        <img src="{{ 'assets/dist/images/portfolio/projecto-1/projecto-1-1.svg'| theme }}" class="portfolio__image" alt="portfolio Item">
+                        <p class="portfolio__item-project"><span>Odemira</span></p>
+                        <ul class="portfolio__item-features">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                            <li>Lorem, ipsum dolor.</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn--primary">Mais info</a>
+                </div>
+                <div class="portfolio__item" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                    <div class="portfolio__item-content">
+                        <h3 class="portfolio__item-title">Projecto B</h3>
+                        <img src="{{ 'assets/dist/images/portfolio/projecto-2/projecto-2-1.svg'| theme }}" class="portfolio__image" alt="portfolio Item">
+                        <p class="portfolio__item-project"><span>Ourique</span></p>
+                        <ul class="portfolio__item-features">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                            <li>Lorem, ipsum dolor.</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn--primary">Mais info</a>
+                </div>
+                <div class="portfolio__item" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                    <div class="portfolio__item-content">
+                        <h3 class="portfolio__item-title">Projecto C</h3>
+                        <img src="{{ 'assets/dist/images/portfolio/projecto-3/projecto-3-1.svg'| theme }}" class="portfolio__image" alt="portfolio Item">
+                        <p class="portfolio__item-project"><span>Cozinha</span></p>
+                        <ul class="portfolio__item-features">
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem, ipsum dolor.</li>
+                            <li>Lorem ipsum dolor sit amet consectetur.</li>
+                            <li>Lorem, ipsum dolor.</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn--primary">Mais info</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

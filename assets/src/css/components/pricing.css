@@ -1,0 +1,29 @@
+.portfolio__item {
+    @apply flex flex-col justify-between bg-white rounded shadow-md mx-6 px-12 py-8 text-center mb-6;
+
+    &--active {
+        @apply bg-primary text-white;
+    }
+}
+
+.portfolio__item-title {
+    @apply font-bold uppercase mb-4;
+}
+
+.portfolio__item-project {
+    @apply mb-2;
+
+    span {
+        @apply text-primary font-bold text-4xl;
+    }
+}
+
+.portfolio__item--active .portfolio__item-project {
+    span {
+        @apply text-white;
+    }
+}
+
+.portfolio__item-features {
+    @apply mb-8;
+}

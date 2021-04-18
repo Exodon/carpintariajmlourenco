@@ -1,0 +1,34 @@
+description = "Default layout"
+==
+<!doctype html>
+<html lang="en">
+    <head>
+        {% partial 'meta' %}
+    </head>
+    <body class="font-body">
+        <div class="wrapper">
+            <h1 class="hidden">{{ this.page.title }}</h1>
+            {% partial 'header' %}
+
+            {% partial 'hero' %}
+
+            {% partial 'about-us' %}
+
+            
+            {% partial 'services' %}
+            
+            {% partial 'portfolio' %} 
+            
+            {% partial 'testimonial' %}
+            
+            {% partial 'contact' %}
+
+            {% partial 'footer' %}
+        </div>
+        <input type="hidden" id="extra_settings" 
+            data-disable-framework-extras="{{ this.theme.disable_framework_extras }}"
+            data-disable-smooth-scrolling="{{ this.theme.disable_smooth_scrolling }}"
+            data-disable-scroll-animation="{{ this.theme.disable_scroll_animation }}">
+    {% partial 'scripts' %}
+    </body>
+</html>
