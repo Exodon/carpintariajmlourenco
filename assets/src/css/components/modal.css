@@ -1,55 +1,129 @@
-/* modal part */
-#modal-background {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.2);
+dialog {
+  border: none;
+  padding: 0;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 10vh;
   z-index: 1;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity .3s ease-out, transform .3s ease-out;  
+  max-height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y:contain;
+  display: block;
+  visibility: hidden;
 }
 
-#modal {
+dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+[data-modal-content] {
   background-color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vw;
-  height: 80vh;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  font-size: 1.5rem;
-  animation-name: animatemodal;
-  animation-duration: 0.4s;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.25);
+  max-width: 90vw;
+}
+
+// ::backdrop for native dialog,
+// .modal-overlay for the others
+dialog::backdrop,
+dialog[open] + .modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay {
+  opacity: 0;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  visibility: hidden;
+  animation: appear .3s ease-out;
+}
+
+dialog[open] + .modal-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ModalHeader */
+
+.modal__header {
+  text-align: right;
+  margin-top: -20px;
+}
+
+/* Modal Title */
+
+.modal__title {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 26px;
+}
+
+/* Close Icon */
+
+.close-icon-container {
+  position: relative;
+  height: 40px;
+  width: 40px;
+
+  .close-icon {
+    cursor: pointer;
+  
+      .circle {
+        opacity: 0.1;
+      }
+  
+      .progress {
+        opacity: 0;
+        stroke-dasharray: 0,120;
+        transition: 0.5s cubic-bezier(0.165, 0.775, 0.145, 1.020);
+      }
+    
+  }
+  
+  &:hover {
+    .close-icon {
+      .progress {
+        opacity: 1;
+        stroke-dasharray: 25,120;
+      }
+    }
+  }
+  
+  .close-icon { 
+    &:hover {
+      .progress {
+        opacity: 1;
+        stroke-dasharray: 90,120;
+      }
+    }
+    &:active,
+    &.clicked {
+      .progress {
+        stroke-dasharray:120,120;
+      }
+    }
+    &.clicked {
+      .progress {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 
-#close-btn {
-  align-self: flex-end;
-}
-
-#close-btn:hover {
-  cursor: pointer;
-  color: #ff0000;
-}
-
-/* modal part end */
-
-/* animation part */
-@keyframes animatemodal {
+/* Animation */
+@keyframes appear {
   from {
-    top: -300px;
     opacity: 0;
   }
+
   to {
-    top: 50%;
     opacity: 1;
   }
 }
-/* animation part end */

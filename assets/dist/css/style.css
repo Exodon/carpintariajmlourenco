@@ -633,46 +633,72 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-/* The Modal (background) */
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.btn {
+  transition: background .2s ease-in;
+  --bg-opacity: 1;
+  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --text-opacity: 1;
+  color: #444444;
+  color: rgba(68, 68, 68, var(--text-opacity));
 }
 
-/* Modal Content/Box */
+.btn:hover {
+    --bg-opacity: 1;
+    background-color: #444444;
+    background-color: rgba(68, 68, 68, var(--bg-opacity));
+    --text-opacity: 1;
+    color: #FFFFFF;
+    color: rgba(255, 255, 255, var(--text-opacity));
+  }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
+.btn--primary {
+    --bg-opacity: 1;
+    background-color: #6C63FF;
+    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    --text-opacity: 1;
+    color: #FFFFFF;
+    color: rgba(255, 255, 255, var(--text-opacity));
+  }
 
-/* The Close Button */
+.btn--primary:hover {
+    --bg-opacity: 1;
+    background-color: #8C87E6;
+    background-color: rgba(140, 135, 230, var(--bg-opacity));
+  }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+.btn--close {
+    border : 0;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+.btn--close:hover {
+    background-color: transparent;
+  }
+
+.btn--screen-read-only {
+    border : 0;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+            clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+  }
 
 .input-group label {
     display: block;
@@ -957,78 +983,139 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 }
 
-/* modal part */
-
-#modal-background {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.2);
+dialog {
+  border: none;
+  padding: 0;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 10vh;
   z-index: 1;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity .3s ease-out, transform .3s ease-out;
+  max-height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y:contain;
+  display: block;
+  visibility: hidden;
 }
 
-#modal {
+dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+[data-modal-content] {
   background-color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vw;
-  height: 80vh;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  font-size: 1.5rem;
-  -webkit-animation-name: animatemodal;
-          animation-name: animatemodal;
-  -webkit-animation-duration: 0.4s;
-          animation-duration: 0.4s;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.25);
+  max-width: 90vw;
 }
 
-#close-btn {
-  align-self: flex-end;
+// ::-webkit-backdrop for native dialog, // .modal-overlay for the others
+dialog::-webkit-backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }
 
-#close-btn:hover {
-  cursor: pointer;
-  color: #ff0000;
+// ::backdrop for native dialog,
+// .modal-overlay for the others
+dialog::backdrop,
+dialog[open] + .modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
 }
 
-/* modal part end */
+.modal-overlay {
+  opacity: 0;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  visibility: hidden;
+  -webkit-animation: appear .3s ease-out;
+          animation: appear .3s ease-out;
+}
 
-/* animation part */
+dialog[open] + .modal-overlay {
+  visibility: visible;
+  opacity: 1;
+}
 
-@-webkit-keyframes animatemodal {
+/* ModalHeader */
+
+.modal__header {
+  text-align: right;
+  margin-top: -20px;
+}
+
+/* Modal Title */
+
+.modal__title {
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 26px;
+}
+
+/* Close Icon */
+
+.close-icon-container {
+  position: relative;
+  height: 40px;
+  width: 40px;
+}
+
+.close-icon-container .close-icon {
+    cursor: pointer;
+  }
+
+.close-icon-container .close-icon .circle {
+      opacity: 0.1;
+    }
+
+.close-icon-container .close-icon .progress {
+      opacity: 0;
+      stroke-dasharray: 0,120;
+      transition: 0.5s cubic-bezier(0.165, 0.775, 0.145, 1.020);
+    }
+
+.close-icon-container:hover .close-icon .progress {
+        opacity: 1;
+        stroke-dasharray: 25,120;
+      }
+
+.close-icon-container .close-icon:hover .progress {
+        opacity: 1;
+        stroke-dasharray: 90,120;
+      }
+
+.close-icon-container .close-icon:active .progress, .close-icon-container .close-icon.clicked .progress {
+        stroke-dasharray:120,120;
+      }
+
+.close-icon-container .close-icon.clicked .progress {
+        opacity: 1;
+      }
+
+/* Animation */
+
+@-webkit-keyframes appear {
   from {
-    top: -300px;
     opacity: 0;
   }
 
   to {
-    top: 50%;
     opacity: 1;
   }
 }
 
-@keyframes animatemodal {
+@keyframes appear {
   from {
-    top: -300px;
     opacity: 0;
   }
 
   to {
-    top: 50%;
     opacity: 1;
   }
 }
-
-/* animation part end */
 
 .project-a {
   width: 100%;
