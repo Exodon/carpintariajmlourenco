@@ -1,6 +1,9 @@
 <section id="portfolio" class="portfolio section bg-gray">
     <div class="container mx-auto">
         <h2 class="section__title text-center mb-16" data-sal="fade" data-sal-easing="ease-in-cubic">{{ this.theme.pricing_title }}</h2>
+        <!-- Trigger/Open The Modal -->
+            {% partial 'portfolio/project-a' %}
+        <!-- Trigger/Open The Modal -->
         <div class="portfolio__items">
             {% if (this.theme.pricing_plans|length > 0) %}
                 {% for plan in this.theme.pricing_plans %}

@@ -10,6 +10,11 @@ import validation from './validation';
 
 import stickyNavigation from './stickyNavigation';
 
+import modal from './modal';
+
+import swiper from './swiper';
+
+
 (function() {
 
     const scripts = [
@@ -18,7 +23,9 @@ import stickyNavigation from './stickyNavigation';
         scrollAnimation,
         carousel,
         validation,
-        stickyNavigation
+        stickyNavigation,
+        modal,
+        swiper,
     ];
     
     scripts.forEach(script => script.init());

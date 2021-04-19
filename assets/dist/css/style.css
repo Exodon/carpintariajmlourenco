@@ -480,19 +480,11 @@ textarea {
   resize: vertical;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #a0aec0;
-}
-
 input::-moz-placeholder, textarea::-moz-placeholder {
   color: #a0aec0;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #a0aec0;
-}
-
-input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   color: #a0aec0;
 }
 
@@ -641,45 +633,46 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-.btn {
-  transition: background .2s ease-in;
-  --bg-opacity: 1;
-  background-color: #FFFFFF;
-  background-color: rgba(255, 255, 255, var(--bg-opacity));
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  border-radius: 0.25rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --text-opacity: 1;
-  color: #444444;
-  color: rgba(68, 68, 68, var(--text-opacity));
+/* The Modal (background) */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.btn:hover {
-    --bg-opacity: 1;
-    background-color: #444444;
-    background-color: rgba(68, 68, 68, var(--bg-opacity));
-    --text-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--text-opacity));
-  }
+/* Modal Content/Box */
 
-.btn--primary {
-    --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
-    --text-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--text-opacity));
-  }
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
 
-.btn--primary:hover {
-    --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
-  }
+/* The Close Button */
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 .input-group label {
     display: block;
@@ -962,6 +955,84 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+/* modal part */
+
+#modal-background {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#modal {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  font-size: 1.5rem;
+  -webkit-animation-name: animatemodal;
+          animation-name: animatemodal;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+#close-btn {
+  align-self: flex-end;
+}
+
+#close-btn:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+/* modal part end */
+
+/* animation part */
+
+@-webkit-keyframes animatemodal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes animatemodal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+/* animation part end */
+
+.project-a {
+  width: 100%;
+  height: 500px;
 }
 
 .space-y-0 > :not(template) ~ :not(template) {
@@ -5112,12 +5183,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   padding-left: 1px;
 }
 
-.placeholder-primary::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
-}
-
 .placeholder-primary::-moz-placeholder {
   --placeholder-opacity: 1;
   color: #6C63FF;
@@ -5130,22 +5195,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(108, 99, 255, var(--placeholder-opacity));
 }
 
-.placeholder-primary::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
-}
-
 .placeholder-primary::placeholder {
   --placeholder-opacity: 1;
   color: #6C63FF;
   color: rgba(108, 99, 255, var(--placeholder-opacity));
-}
-
-.placeholder-secondary::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
 }
 
 .placeholder-secondary::-moz-placeholder {
@@ -5160,22 +5213,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(140, 135, 230, var(--placeholder-opacity));
 }
 
-.placeholder-secondary::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
-}
-
 .placeholder-secondary::placeholder {
   --placeholder-opacity: 1;
   color: #8C87E6;
   color: rgba(140, 135, 230, var(--placeholder-opacity));
-}
-
-.placeholder-tertiary::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #444444;
-  color: rgba(68, 68, 68, var(--placeholder-opacity));
 }
 
 .placeholder-tertiary::-moz-placeholder {
@@ -5190,22 +5231,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(68, 68, 68, var(--placeholder-opacity));
 }
 
-.placeholder-tertiary::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #444444;
-  color: rgba(68, 68, 68, var(--placeholder-opacity));
-}
-
 .placeholder-tertiary::placeholder {
   --placeholder-opacity: 1;
   color: #444444;
   color: rgba(68, 68, 68, var(--placeholder-opacity));
-}
-
-.placeholder-error::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #FF6363;
-  color: rgba(255, 99, 99, var(--placeholder-opacity));
 }
 
 .placeholder-error::-moz-placeholder {
@@ -5220,22 +5249,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(255, 99, 99, var(--placeholder-opacity));
 }
 
-.placeholder-error::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #FF6363;
-  color: rgba(255, 99, 99, var(--placeholder-opacity));
-}
-
 .placeholder-error::placeholder {
   --placeholder-opacity: 1;
   color: #FF6363;
   color: rgba(255, 99, 99, var(--placeholder-opacity));
-}
-
-.placeholder-white::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #FFFFFF;
-  color: rgba(255, 255, 255, var(--placeholder-opacity));
 }
 
 .placeholder-white::-moz-placeholder {
@@ -5250,22 +5267,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(255, 255, 255, var(--placeholder-opacity));
 }
 
-.placeholder-white::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #FFFFFF;
-  color: rgba(255, 255, 255, var(--placeholder-opacity));
-}
-
 .placeholder-white::placeholder {
   --placeholder-opacity: 1;
   color: #FFFFFF;
   color: rgba(255, 255, 255, var(--placeholder-opacity));
-}
-
-.placeholder-lightGray::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #F9F9F9;
-  color: rgba(249, 249, 249, var(--placeholder-opacity));
 }
 
 .placeholder-lightGray::-moz-placeholder {
@@ -5280,22 +5285,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(249, 249, 249, var(--placeholder-opacity));
 }
 
-.placeholder-lightGray::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #F9F9F9;
-  color: rgba(249, 249, 249, var(--placeholder-opacity));
-}
-
 .placeholder-lightGray::placeholder {
   --placeholder-opacity: 1;
   color: #F9F9F9;
   color: rgba(249, 249, 249, var(--placeholder-opacity));
-}
-
-.placeholder-gray::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #F3F3F3;
-  color: rgba(243, 243, 243, var(--placeholder-opacity));
 }
 
 .placeholder-gray::-moz-placeholder {
@@ -5310,20 +5303,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(243, 243, 243, var(--placeholder-opacity));
 }
 
-.placeholder-gray::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #F3F3F3;
-  color: rgba(243, 243, 243, var(--placeholder-opacity));
-}
-
 .placeholder-gray::placeholder {
   --placeholder-opacity: 1;
   color: #F3F3F3;
   color: rgba(243, 243, 243, var(--placeholder-opacity));
-}
-
-.placeholder-transparent::-webkit-input-placeholder {
-  color: transparent;
 }
 
 .placeholder-transparent::-moz-placeholder {
@@ -5334,18 +5317,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: transparent;
 }
 
-.placeholder-transparent::-ms-input-placeholder {
-  color: transparent;
-}
-
 .placeholder-transparent::placeholder {
   color: transparent;
-}
-
-.focus\:placeholder-primary:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-primary:focus::-moz-placeholder {
@@ -5360,22 +5333,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(108, 99, 255, var(--placeholder-opacity));
 }
 
-.focus\:placeholder-primary:focus::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
-}
-
 .focus\:placeholder-primary:focus::placeholder {
   --placeholder-opacity: 1;
   color: #6C63FF;
   color: rgba(108, 99, 255, var(--placeholder-opacity));
-}
-
-.focus\:placeholder-secondary:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-secondary:focus::-moz-placeholder {
@@ -5390,22 +5351,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(140, 135, 230, var(--placeholder-opacity));
 }
 
-.focus\:placeholder-secondary:focus::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
-}
-
 .focus\:placeholder-secondary:focus::placeholder {
   --placeholder-opacity: 1;
   color: #8C87E6;
   color: rgba(140, 135, 230, var(--placeholder-opacity));
-}
-
-.focus\:placeholder-tertiary:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #444444;
-  color: rgba(68, 68, 68, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -5420,22 +5369,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(68, 68, 68, var(--placeholder-opacity));
 }
 
-.focus\:placeholder-tertiary:focus::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #444444;
-  color: rgba(68, 68, 68, var(--placeholder-opacity));
-}
-
 .focus\:placeholder-tertiary:focus::placeholder {
   --placeholder-opacity: 1;
   color: #444444;
   color: rgba(68, 68, 68, var(--placeholder-opacity));
-}
-
-.focus\:placeholder-error:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #FF6363;
-  color: rgba(255, 99, 99, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-error:focus::-moz-placeholder {
@@ -5450,22 +5387,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(255, 99, 99, var(--placeholder-opacity));
 }
 
-.focus\:placeholder-error:focus::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #FF6363;
-  color: rgba(255, 99, 99, var(--placeholder-opacity));
-}
-
 .focus\:placeholder-error:focus::placeholder {
   --placeholder-opacity: 1;
   color: #FF6363;
   color: rgba(255, 99, 99, var(--placeholder-opacity));
-}
-
-.focus\:placeholder-white:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #FFFFFF;
-  color: rgba(255, 255, 255, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-white:focus::-moz-placeholder {
@@ -5480,22 +5405,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(255, 255, 255, var(--placeholder-opacity));
 }
 
-.focus\:placeholder-white:focus::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #FFFFFF;
-  color: rgba(255, 255, 255, var(--placeholder-opacity));
-}
-
 .focus\:placeholder-white:focus::placeholder {
   --placeholder-opacity: 1;
   color: #FFFFFF;
   color: rgba(255, 255, 255, var(--placeholder-opacity));
-}
-
-.focus\:placeholder-lightGray:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #F9F9F9;
-  color: rgba(249, 249, 249, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-lightGray:focus::-moz-placeholder {
@@ -5510,22 +5423,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(249, 249, 249, var(--placeholder-opacity));
 }
 
-.focus\:placeholder-lightGray:focus::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #F9F9F9;
-  color: rgba(249, 249, 249, var(--placeholder-opacity));
-}
-
 .focus\:placeholder-lightGray:focus::placeholder {
   --placeholder-opacity: 1;
   color: #F9F9F9;
   color: rgba(249, 249, 249, var(--placeholder-opacity));
-}
-
-.focus\:placeholder-gray:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #F3F3F3;
-  color: rgba(243, 243, 243, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-gray:focus::-moz-placeholder {
@@ -5540,20 +5441,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: rgba(243, 243, 243, var(--placeholder-opacity));
 }
 
-.focus\:placeholder-gray:focus::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-  color: #F3F3F3;
-  color: rgba(243, 243, 243, var(--placeholder-opacity));
-}
-
 .focus\:placeholder-gray:focus::placeholder {
   --placeholder-opacity: 1;
   color: #F3F3F3;
   color: rgba(243, 243, 243, var(--placeholder-opacity));
-}
-
-.focus\:placeholder-transparent:focus::-webkit-input-placeholder {
-  color: transparent;
 }
 
 .focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -5564,16 +5455,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   color: transparent;
 }
 
-.focus\:placeholder-transparent:focus::-ms-input-placeholder {
-  color: transparent;
-}
-
 .focus\:placeholder-transparent:focus::placeholder {
   color: transparent;
-}
-
-.placeholder-opacity-0::-webkit-input-placeholder {
-  --placeholder-opacity: 0;
 }
 
 .placeholder-opacity-0::-moz-placeholder {
@@ -5584,16 +5467,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 0;
 }
 
-.placeholder-opacity-0::-ms-input-placeholder {
-  --placeholder-opacity: 0;
-}
-
 .placeholder-opacity-0::placeholder {
   --placeholder-opacity: 0;
-}
-
-.placeholder-opacity-25::-webkit-input-placeholder {
-  --placeholder-opacity: 0.25;
 }
 
 .placeholder-opacity-25::-moz-placeholder {
@@ -5604,16 +5479,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 0.25;
 }
 
-.placeholder-opacity-25::-ms-input-placeholder {
-  --placeholder-opacity: 0.25;
-}
-
 .placeholder-opacity-25::placeholder {
   --placeholder-opacity: 0.25;
-}
-
-.placeholder-opacity-50::-webkit-input-placeholder {
-  --placeholder-opacity: 0.5;
 }
 
 .placeholder-opacity-50::-moz-placeholder {
@@ -5624,16 +5491,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 0.5;
 }
 
-.placeholder-opacity-50::-ms-input-placeholder {
-  --placeholder-opacity: 0.5;
-}
-
 .placeholder-opacity-50::placeholder {
   --placeholder-opacity: 0.5;
-}
-
-.placeholder-opacity-75::-webkit-input-placeholder {
-  --placeholder-opacity: 0.75;
 }
 
 .placeholder-opacity-75::-moz-placeholder {
@@ -5644,16 +5503,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 0.75;
 }
 
-.placeholder-opacity-75::-ms-input-placeholder {
-  --placeholder-opacity: 0.75;
-}
-
 .placeholder-opacity-75::placeholder {
   --placeholder-opacity: 0.75;
-}
-
-.placeholder-opacity-100::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
 }
 
 .placeholder-opacity-100::-moz-placeholder {
@@ -5664,16 +5515,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 1;
 }
 
-.placeholder-opacity-100::-ms-input-placeholder {
-  --placeholder-opacity: 1;
-}
-
 .placeholder-opacity-100::placeholder {
   --placeholder-opacity: 1;
-}
-
-.focus\:placeholder-opacity-0:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 0;
 }
 
 .focus\:placeholder-opacity-0:focus::-moz-placeholder {
@@ -5684,16 +5527,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 0;
 }
 
-.focus\:placeholder-opacity-0:focus::-ms-input-placeholder {
-  --placeholder-opacity: 0;
-}
-
 .focus\:placeholder-opacity-0:focus::placeholder {
   --placeholder-opacity: 0;
-}
-
-.focus\:placeholder-opacity-25:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 0.25;
 }
 
 .focus\:placeholder-opacity-25:focus::-moz-placeholder {
@@ -5704,16 +5539,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 0.25;
 }
 
-.focus\:placeholder-opacity-25:focus::-ms-input-placeholder {
-  --placeholder-opacity: 0.25;
-}
-
 .focus\:placeholder-opacity-25:focus::placeholder {
   --placeholder-opacity: 0.25;
-}
-
-.focus\:placeholder-opacity-50:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 0.5;
 }
 
 .focus\:placeholder-opacity-50:focus::-moz-placeholder {
@@ -5724,16 +5551,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 0.5;
 }
 
-.focus\:placeholder-opacity-50:focus::-ms-input-placeholder {
-  --placeholder-opacity: 0.5;
-}
-
 .focus\:placeholder-opacity-50:focus::placeholder {
   --placeholder-opacity: 0.5;
-}
-
-.focus\:placeholder-opacity-75:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 0.75;
 }
 
 .focus\:placeholder-opacity-75:focus::-moz-placeholder {
@@ -5744,16 +5563,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   --placeholder-opacity: 0.75;
 }
 
-.focus\:placeholder-opacity-75:focus::-ms-input-placeholder {
-  --placeholder-opacity: 0.75;
-}
-
 .focus\:placeholder-opacity-75:focus::placeholder {
   --placeholder-opacity: 0.75;
-}
-
-.focus\:placeholder-opacity-100:focus::-webkit-input-placeholder {
-  --placeholder-opacity: 1;
 }
 
 .focus\:placeholder-opacity-100:focus::-moz-placeholder {
@@ -5761,10 +5572,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
 }
 
 .focus\:placeholder-opacity-100:focus:-ms-input-placeholder {
-  --placeholder-opacity: 1;
-}
-
-.focus\:placeholder-opacity-100:focus::-ms-input-placeholder {
   --placeholder-opacity: 1;
 }
 
@@ -5797,7 +5604,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
 }
 
 .sticky {
-  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -9126,7 +8932,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
 
 .header.is-sticky {
     top: 0;
-    position: -webkit-sticky;
     position: sticky;
     width: 100%;
     border-bottom: 1px solid gray;
@@ -13708,12 +13513,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     padding-left: 1px;
   }
 
-  .sm\:placeholder-primary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .sm\:placeholder-primary::-moz-placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
@@ -13726,22 +13525,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
-  .sm\:placeholder-primary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .sm\:placeholder-primary::placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
     color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
-  .sm\:placeholder-secondary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-secondary::-moz-placeholder {
@@ -13756,22 +13543,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
-  .sm\:placeholder-secondary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
   .sm\:placeholder-secondary::placeholder {
     --placeholder-opacity: 1;
     color: #8C87E6;
     color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
-  .sm\:placeholder-tertiary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-tertiary::-moz-placeholder {
@@ -13786,22 +13561,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
-  .sm\:placeholder-tertiary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
   .sm\:placeholder-tertiary::placeholder {
     --placeholder-opacity: 1;
     color: #444444;
     color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
-  .sm\:placeholder-error::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-error::-moz-placeholder {
@@ -13816,22 +13579,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
-  .sm\:placeholder-error::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
   .sm\:placeholder-error::placeholder {
     --placeholder-opacity: 1;
     color: #FF6363;
     color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
-  .sm\:placeholder-white::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-white::-moz-placeholder {
@@ -13846,22 +13597,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
-  .sm\:placeholder-white::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
   .sm\:placeholder-white::placeholder {
     --placeholder-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
-  .sm\:placeholder-lightGray::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-lightGray::-moz-placeholder {
@@ -13876,22 +13615,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
-  .sm\:placeholder-lightGray::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
   .sm\:placeholder-lightGray::placeholder {
     --placeholder-opacity: 1;
     color: #F9F9F9;
     color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
-  .sm\:placeholder-gray::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-gray::-moz-placeholder {
@@ -13906,20 +13633,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
-  .sm\:placeholder-gray::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
   .sm\:placeholder-gray::placeholder {
     --placeholder-opacity: 1;
     color: #F3F3F3;
     color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
-  .sm\:placeholder-transparent::-webkit-input-placeholder {
-    color: transparent;
   }
 
   .sm\:placeholder-transparent::-moz-placeholder {
@@ -13930,18 +13647,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: transparent;
   }
 
-  .sm\:placeholder-transparent::-ms-input-placeholder {
-    color: transparent;
-  }
-
   .sm\:placeholder-transparent::placeholder {
     color: transparent;
-  }
-
-  .sm\:focus\:placeholder-primary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-primary:focus::-moz-placeholder {
@@ -13956,22 +13663,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
-  .sm\:focus\:placeholder-primary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .sm\:focus\:placeholder-primary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
     color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
-  .sm\:focus\:placeholder-secondary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-secondary:focus::-moz-placeholder {
@@ -13986,22 +13681,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
-  .sm\:focus\:placeholder-secondary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
   .sm\:focus\:placeholder-secondary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #8C87E6;
     color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
-  .sm\:focus\:placeholder-tertiary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -14016,22 +13699,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
-  .sm\:focus\:placeholder-tertiary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
   .sm\:focus\:placeholder-tertiary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #444444;
     color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
-  .sm\:focus\:placeholder-error:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-error:focus::-moz-placeholder {
@@ -14046,22 +13717,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
-  .sm\:focus\:placeholder-error:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
   .sm\:focus\:placeholder-error:focus::placeholder {
     --placeholder-opacity: 1;
     color: #FF6363;
     color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
-  .sm\:focus\:placeholder-white:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-white:focus::-moz-placeholder {
@@ -14076,22 +13735,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
-  .sm\:focus\:placeholder-white:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
   .sm\:focus\:placeholder-white:focus::placeholder {
     --placeholder-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
-  .sm\:focus\:placeholder-lightGray:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-lightGray:focus::-moz-placeholder {
@@ -14106,22 +13753,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
-  .sm\:focus\:placeholder-lightGray:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
   .sm\:focus\:placeholder-lightGray:focus::placeholder {
     --placeholder-opacity: 1;
     color: #F9F9F9;
     color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
-  .sm\:focus\:placeholder-gray:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-gray:focus::-moz-placeholder {
@@ -14136,20 +13771,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
-  .sm\:focus\:placeholder-gray:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
   .sm\:focus\:placeholder-gray:focus::placeholder {
     --placeholder-opacity: 1;
     color: #F3F3F3;
     color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
-  .sm\:focus\:placeholder-transparent:focus::-webkit-input-placeholder {
-    color: transparent;
   }
 
   .sm\:focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -14160,16 +13785,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: transparent;
   }
 
-  .sm\:focus\:placeholder-transparent:focus::-ms-input-placeholder {
-    color: transparent;
-  }
-
   .sm\:focus\:placeholder-transparent:focus::placeholder {
     color: transparent;
-  }
-
-  .sm\:placeholder-opacity-0::-webkit-input-placeholder {
-    --placeholder-opacity: 0;
   }
 
   .sm\:placeholder-opacity-0::-moz-placeholder {
@@ -14180,16 +13797,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0;
   }
 
-  .sm\:placeholder-opacity-0::-ms-input-placeholder {
-    --placeholder-opacity: 0;
-  }
-
   .sm\:placeholder-opacity-0::placeholder {
     --placeholder-opacity: 0;
-  }
-
-  .sm\:placeholder-opacity-25::-webkit-input-placeholder {
-    --placeholder-opacity: 0.25;
   }
 
   .sm\:placeholder-opacity-25::-moz-placeholder {
@@ -14200,16 +13809,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.25;
   }
 
-  .sm\:placeholder-opacity-25::-ms-input-placeholder {
-    --placeholder-opacity: 0.25;
-  }
-
   .sm\:placeholder-opacity-25::placeholder {
     --placeholder-opacity: 0.25;
-  }
-
-  .sm\:placeholder-opacity-50::-webkit-input-placeholder {
-    --placeholder-opacity: 0.5;
   }
 
   .sm\:placeholder-opacity-50::-moz-placeholder {
@@ -14220,16 +13821,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.5;
   }
 
-  .sm\:placeholder-opacity-50::-ms-input-placeholder {
-    --placeholder-opacity: 0.5;
-  }
-
   .sm\:placeholder-opacity-50::placeholder {
     --placeholder-opacity: 0.5;
-  }
-
-  .sm\:placeholder-opacity-75::-webkit-input-placeholder {
-    --placeholder-opacity: 0.75;
   }
 
   .sm\:placeholder-opacity-75::-moz-placeholder {
@@ -14240,16 +13833,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.75;
   }
 
-  .sm\:placeholder-opacity-75::-ms-input-placeholder {
-    --placeholder-opacity: 0.75;
-  }
-
   .sm\:placeholder-opacity-75::placeholder {
     --placeholder-opacity: 0.75;
-  }
-
-  .sm\:placeholder-opacity-100::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
   }
 
   .sm\:placeholder-opacity-100::-moz-placeholder {
@@ -14260,16 +13845,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 1;
   }
 
-  .sm\:placeholder-opacity-100::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-  }
-
   .sm\:placeholder-opacity-100::placeholder {
     --placeholder-opacity: 1;
-  }
-
-  .sm\:focus\:placeholder-opacity-0:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0;
   }
 
   .sm\:focus\:placeholder-opacity-0:focus::-moz-placeholder {
@@ -14280,16 +13857,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0;
   }
 
-  .sm\:focus\:placeholder-opacity-0:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0;
-  }
-
   .sm\:focus\:placeholder-opacity-0:focus::placeholder {
     --placeholder-opacity: 0;
-  }
-
-  .sm\:focus\:placeholder-opacity-25:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.25;
   }
 
   .sm\:focus\:placeholder-opacity-25:focus::-moz-placeholder {
@@ -14300,16 +13869,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.25;
   }
 
-  .sm\:focus\:placeholder-opacity-25:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.25;
-  }
-
   .sm\:focus\:placeholder-opacity-25:focus::placeholder {
     --placeholder-opacity: 0.25;
-  }
-
-  .sm\:focus\:placeholder-opacity-50:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.5;
   }
 
   .sm\:focus\:placeholder-opacity-50:focus::-moz-placeholder {
@@ -14320,16 +13881,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.5;
   }
 
-  .sm\:focus\:placeholder-opacity-50:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.5;
-  }
-
   .sm\:focus\:placeholder-opacity-50:focus::placeholder {
     --placeholder-opacity: 0.5;
-  }
-
-  .sm\:focus\:placeholder-opacity-75:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.75;
   }
 
   .sm\:focus\:placeholder-opacity-75:focus::-moz-placeholder {
@@ -14340,16 +13893,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.75;
   }
 
-  .sm\:focus\:placeholder-opacity-75:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.75;
-  }
-
   .sm\:focus\:placeholder-opacity-75:focus::placeholder {
     --placeholder-opacity: 0.75;
-  }
-
-  .sm\:focus\:placeholder-opacity-100:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
   }
 
   .sm\:focus\:placeholder-opacity-100:focus::-moz-placeholder {
@@ -14357,10 +13902,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 
   .sm\:focus\:placeholder-opacity-100:focus:-ms-input-placeholder {
-    --placeholder-opacity: 1;
-  }
-
-  .sm\:focus\:placeholder-opacity-100:focus::-ms-input-placeholder {
     --placeholder-opacity: 1;
   }
 
@@ -14393,7 +13934,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 
   .sm\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -21845,12 +21385,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     padding-left: 1px;
   }
 
-  .md\:placeholder-primary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .md\:placeholder-primary::-moz-placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
@@ -21863,22 +21397,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
-  .md\:placeholder-primary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .md\:placeholder-primary::placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
     color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
-  .md\:placeholder-secondary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
   .md\:placeholder-secondary::-moz-placeholder {
@@ -21893,22 +21415,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
-  .md\:placeholder-secondary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
   .md\:placeholder-secondary::placeholder {
     --placeholder-opacity: 1;
     color: #8C87E6;
     color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
-  .md\:placeholder-tertiary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
   .md\:placeholder-tertiary::-moz-placeholder {
@@ -21923,22 +21433,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
-  .md\:placeholder-tertiary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
   .md\:placeholder-tertiary::placeholder {
     --placeholder-opacity: 1;
     color: #444444;
     color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
-  .md\:placeholder-error::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
   .md\:placeholder-error::-moz-placeholder {
@@ -21953,22 +21451,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
-  .md\:placeholder-error::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
   .md\:placeholder-error::placeholder {
     --placeholder-opacity: 1;
     color: #FF6363;
     color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
-  .md\:placeholder-white::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .md\:placeholder-white::-moz-placeholder {
@@ -21983,22 +21469,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
-  .md\:placeholder-white::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
   .md\:placeholder-white::placeholder {
     --placeholder-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
-  .md\:placeholder-lightGray::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
   .md\:placeholder-lightGray::-moz-placeholder {
@@ -22013,22 +21487,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
-  .md\:placeholder-lightGray::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
   .md\:placeholder-lightGray::placeholder {
     --placeholder-opacity: 1;
     color: #F9F9F9;
     color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
-  .md\:placeholder-gray::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
   .md\:placeholder-gray::-moz-placeholder {
@@ -22043,20 +21505,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
-  .md\:placeholder-gray::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
   .md\:placeholder-gray::placeholder {
     --placeholder-opacity: 1;
     color: #F3F3F3;
     color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
-  .md\:placeholder-transparent::-webkit-input-placeholder {
-    color: transparent;
   }
 
   .md\:placeholder-transparent::-moz-placeholder {
@@ -22067,18 +21519,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: transparent;
   }
 
-  .md\:placeholder-transparent::-ms-input-placeholder {
-    color: transparent;
-  }
-
   .md\:placeholder-transparent::placeholder {
     color: transparent;
-  }
-
-  .md\:focus\:placeholder-primary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-primary:focus::-moz-placeholder {
@@ -22093,22 +21535,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
-  .md\:focus\:placeholder-primary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .md\:focus\:placeholder-primary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
     color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
-  .md\:focus\:placeholder-secondary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-secondary:focus::-moz-placeholder {
@@ -22123,22 +21553,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
-  .md\:focus\:placeholder-secondary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
   .md\:focus\:placeholder-secondary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #8C87E6;
     color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
-  .md\:focus\:placeholder-tertiary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -22153,22 +21571,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
-  .md\:focus\:placeholder-tertiary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
   .md\:focus\:placeholder-tertiary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #444444;
     color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
-  .md\:focus\:placeholder-error:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-error:focus::-moz-placeholder {
@@ -22183,22 +21589,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
-  .md\:focus\:placeholder-error:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
   .md\:focus\:placeholder-error:focus::placeholder {
     --placeholder-opacity: 1;
     color: #FF6363;
     color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
-  .md\:focus\:placeholder-white:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-white:focus::-moz-placeholder {
@@ -22213,22 +21607,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
-  .md\:focus\:placeholder-white:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
   .md\:focus\:placeholder-white:focus::placeholder {
     --placeholder-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
-  .md\:focus\:placeholder-lightGray:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-lightGray:focus::-moz-placeholder {
@@ -22243,22 +21625,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
-  .md\:focus\:placeholder-lightGray:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
   .md\:focus\:placeholder-lightGray:focus::placeholder {
     --placeholder-opacity: 1;
     color: #F9F9F9;
     color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
-  .md\:focus\:placeholder-gray:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-gray:focus::-moz-placeholder {
@@ -22273,20 +21643,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
-  .md\:focus\:placeholder-gray:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
   .md\:focus\:placeholder-gray:focus::placeholder {
     --placeholder-opacity: 1;
     color: #F3F3F3;
     color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
-  .md\:focus\:placeholder-transparent:focus::-webkit-input-placeholder {
-    color: transparent;
   }
 
   .md\:focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -22297,16 +21657,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: transparent;
   }
 
-  .md\:focus\:placeholder-transparent:focus::-ms-input-placeholder {
-    color: transparent;
-  }
-
   .md\:focus\:placeholder-transparent:focus::placeholder {
     color: transparent;
-  }
-
-  .md\:placeholder-opacity-0::-webkit-input-placeholder {
-    --placeholder-opacity: 0;
   }
 
   .md\:placeholder-opacity-0::-moz-placeholder {
@@ -22317,16 +21669,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0;
   }
 
-  .md\:placeholder-opacity-0::-ms-input-placeholder {
-    --placeholder-opacity: 0;
-  }
-
   .md\:placeholder-opacity-0::placeholder {
     --placeholder-opacity: 0;
-  }
-
-  .md\:placeholder-opacity-25::-webkit-input-placeholder {
-    --placeholder-opacity: 0.25;
   }
 
   .md\:placeholder-opacity-25::-moz-placeholder {
@@ -22337,16 +21681,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.25;
   }
 
-  .md\:placeholder-opacity-25::-ms-input-placeholder {
-    --placeholder-opacity: 0.25;
-  }
-
   .md\:placeholder-opacity-25::placeholder {
     --placeholder-opacity: 0.25;
-  }
-
-  .md\:placeholder-opacity-50::-webkit-input-placeholder {
-    --placeholder-opacity: 0.5;
   }
 
   .md\:placeholder-opacity-50::-moz-placeholder {
@@ -22357,16 +21693,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.5;
   }
 
-  .md\:placeholder-opacity-50::-ms-input-placeholder {
-    --placeholder-opacity: 0.5;
-  }
-
   .md\:placeholder-opacity-50::placeholder {
     --placeholder-opacity: 0.5;
-  }
-
-  .md\:placeholder-opacity-75::-webkit-input-placeholder {
-    --placeholder-opacity: 0.75;
   }
 
   .md\:placeholder-opacity-75::-moz-placeholder {
@@ -22377,16 +21705,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.75;
   }
 
-  .md\:placeholder-opacity-75::-ms-input-placeholder {
-    --placeholder-opacity: 0.75;
-  }
-
   .md\:placeholder-opacity-75::placeholder {
     --placeholder-opacity: 0.75;
-  }
-
-  .md\:placeholder-opacity-100::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
   }
 
   .md\:placeholder-opacity-100::-moz-placeholder {
@@ -22397,16 +21717,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 1;
   }
 
-  .md\:placeholder-opacity-100::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-  }
-
   .md\:placeholder-opacity-100::placeholder {
     --placeholder-opacity: 1;
-  }
-
-  .md\:focus\:placeholder-opacity-0:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0;
   }
 
   .md\:focus\:placeholder-opacity-0:focus::-moz-placeholder {
@@ -22417,16 +21729,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0;
   }
 
-  .md\:focus\:placeholder-opacity-0:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0;
-  }
-
   .md\:focus\:placeholder-opacity-0:focus::placeholder {
     --placeholder-opacity: 0;
-  }
-
-  .md\:focus\:placeholder-opacity-25:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.25;
   }
 
   .md\:focus\:placeholder-opacity-25:focus::-moz-placeholder {
@@ -22437,16 +21741,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.25;
   }
 
-  .md\:focus\:placeholder-opacity-25:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.25;
-  }
-
   .md\:focus\:placeholder-opacity-25:focus::placeholder {
     --placeholder-opacity: 0.25;
-  }
-
-  .md\:focus\:placeholder-opacity-50:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.5;
   }
 
   .md\:focus\:placeholder-opacity-50:focus::-moz-placeholder {
@@ -22457,16 +21753,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.5;
   }
 
-  .md\:focus\:placeholder-opacity-50:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.5;
-  }
-
   .md\:focus\:placeholder-opacity-50:focus::placeholder {
     --placeholder-opacity: 0.5;
-  }
-
-  .md\:focus\:placeholder-opacity-75:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.75;
   }
 
   .md\:focus\:placeholder-opacity-75:focus::-moz-placeholder {
@@ -22477,16 +21765,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.75;
   }
 
-  .md\:focus\:placeholder-opacity-75:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.75;
-  }
-
   .md\:focus\:placeholder-opacity-75:focus::placeholder {
     --placeholder-opacity: 0.75;
-  }
-
-  .md\:focus\:placeholder-opacity-100:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
   }
 
   .md\:focus\:placeholder-opacity-100:focus::-moz-placeholder {
@@ -22494,10 +21774,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 
   .md\:focus\:placeholder-opacity-100:focus:-ms-input-placeholder {
-    --placeholder-opacity: 1;
-  }
-
-  .md\:focus\:placeholder-opacity-100:focus::-ms-input-placeholder {
     --placeholder-opacity: 1;
   }
 
@@ -22530,7 +21806,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 
   .md\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -29982,12 +29257,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     padding-left: 1px;
   }
 
-  .lg\:placeholder-primary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .lg\:placeholder-primary::-moz-placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
@@ -30000,22 +29269,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
-  .lg\:placeholder-primary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .lg\:placeholder-primary::placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
     color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
-  .lg\:placeholder-secondary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-secondary::-moz-placeholder {
@@ -30030,22 +29287,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
-  .lg\:placeholder-secondary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
   .lg\:placeholder-secondary::placeholder {
     --placeholder-opacity: 1;
     color: #8C87E6;
     color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
-  .lg\:placeholder-tertiary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-tertiary::-moz-placeholder {
@@ -30060,22 +29305,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
-  .lg\:placeholder-tertiary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
   .lg\:placeholder-tertiary::placeholder {
     --placeholder-opacity: 1;
     color: #444444;
     color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
-  .lg\:placeholder-error::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-error::-moz-placeholder {
@@ -30090,22 +29323,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
-  .lg\:placeholder-error::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
   .lg\:placeholder-error::placeholder {
     --placeholder-opacity: 1;
     color: #FF6363;
     color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
-  .lg\:placeholder-white::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-white::-moz-placeholder {
@@ -30120,22 +29341,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
-  .lg\:placeholder-white::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
   .lg\:placeholder-white::placeholder {
     --placeholder-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
-  .lg\:placeholder-lightGray::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-lightGray::-moz-placeholder {
@@ -30150,22 +29359,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
-  .lg\:placeholder-lightGray::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
   .lg\:placeholder-lightGray::placeholder {
     --placeholder-opacity: 1;
     color: #F9F9F9;
     color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
-  .lg\:placeholder-gray::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-gray::-moz-placeholder {
@@ -30180,20 +29377,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
-  .lg\:placeholder-gray::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
   .lg\:placeholder-gray::placeholder {
     --placeholder-opacity: 1;
     color: #F3F3F3;
     color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
-  .lg\:placeholder-transparent::-webkit-input-placeholder {
-    color: transparent;
   }
 
   .lg\:placeholder-transparent::-moz-placeholder {
@@ -30204,18 +29391,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: transparent;
   }
 
-  .lg\:placeholder-transparent::-ms-input-placeholder {
-    color: transparent;
-  }
-
   .lg\:placeholder-transparent::placeholder {
     color: transparent;
-  }
-
-  .lg\:focus\:placeholder-primary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-primary:focus::-moz-placeholder {
@@ -30230,22 +29407,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
-  .lg\:focus\:placeholder-primary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .lg\:focus\:placeholder-primary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
     color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
-  .lg\:focus\:placeholder-secondary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-secondary:focus::-moz-placeholder {
@@ -30260,22 +29425,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
-  .lg\:focus\:placeholder-secondary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
   .lg\:focus\:placeholder-secondary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #8C87E6;
     color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
-  .lg\:focus\:placeholder-tertiary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -30290,22 +29443,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
-  .lg\:focus\:placeholder-tertiary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
   .lg\:focus\:placeholder-tertiary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #444444;
     color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
-  .lg\:focus\:placeholder-error:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-error:focus::-moz-placeholder {
@@ -30320,22 +29461,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
-  .lg\:focus\:placeholder-error:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
   .lg\:focus\:placeholder-error:focus::placeholder {
     --placeholder-opacity: 1;
     color: #FF6363;
     color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
-  .lg\:focus\:placeholder-white:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-white:focus::-moz-placeholder {
@@ -30350,22 +29479,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
-  .lg\:focus\:placeholder-white:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
   .lg\:focus\:placeholder-white:focus::placeholder {
     --placeholder-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
-  .lg\:focus\:placeholder-lightGray:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-lightGray:focus::-moz-placeholder {
@@ -30380,22 +29497,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
-  .lg\:focus\:placeholder-lightGray:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
   .lg\:focus\:placeholder-lightGray:focus::placeholder {
     --placeholder-opacity: 1;
     color: #F9F9F9;
     color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
-  .lg\:focus\:placeholder-gray:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-gray:focus::-moz-placeholder {
@@ -30410,20 +29515,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
-  .lg\:focus\:placeholder-gray:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
   .lg\:focus\:placeholder-gray:focus::placeholder {
     --placeholder-opacity: 1;
     color: #F3F3F3;
     color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
-  .lg\:focus\:placeholder-transparent:focus::-webkit-input-placeholder {
-    color: transparent;
   }
 
   .lg\:focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -30434,16 +29529,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: transparent;
   }
 
-  .lg\:focus\:placeholder-transparent:focus::-ms-input-placeholder {
-    color: transparent;
-  }
-
   .lg\:focus\:placeholder-transparent:focus::placeholder {
     color: transparent;
-  }
-
-  .lg\:placeholder-opacity-0::-webkit-input-placeholder {
-    --placeholder-opacity: 0;
   }
 
   .lg\:placeholder-opacity-0::-moz-placeholder {
@@ -30454,16 +29541,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0;
   }
 
-  .lg\:placeholder-opacity-0::-ms-input-placeholder {
-    --placeholder-opacity: 0;
-  }
-
   .lg\:placeholder-opacity-0::placeholder {
     --placeholder-opacity: 0;
-  }
-
-  .lg\:placeholder-opacity-25::-webkit-input-placeholder {
-    --placeholder-opacity: 0.25;
   }
 
   .lg\:placeholder-opacity-25::-moz-placeholder {
@@ -30474,16 +29553,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.25;
   }
 
-  .lg\:placeholder-opacity-25::-ms-input-placeholder {
-    --placeholder-opacity: 0.25;
-  }
-
   .lg\:placeholder-opacity-25::placeholder {
     --placeholder-opacity: 0.25;
-  }
-
-  .lg\:placeholder-opacity-50::-webkit-input-placeholder {
-    --placeholder-opacity: 0.5;
   }
 
   .lg\:placeholder-opacity-50::-moz-placeholder {
@@ -30494,16 +29565,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.5;
   }
 
-  .lg\:placeholder-opacity-50::-ms-input-placeholder {
-    --placeholder-opacity: 0.5;
-  }
-
   .lg\:placeholder-opacity-50::placeholder {
     --placeholder-opacity: 0.5;
-  }
-
-  .lg\:placeholder-opacity-75::-webkit-input-placeholder {
-    --placeholder-opacity: 0.75;
   }
 
   .lg\:placeholder-opacity-75::-moz-placeholder {
@@ -30514,16 +29577,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.75;
   }
 
-  .lg\:placeholder-opacity-75::-ms-input-placeholder {
-    --placeholder-opacity: 0.75;
-  }
-
   .lg\:placeholder-opacity-75::placeholder {
     --placeholder-opacity: 0.75;
-  }
-
-  .lg\:placeholder-opacity-100::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
   }
 
   .lg\:placeholder-opacity-100::-moz-placeholder {
@@ -30534,16 +29589,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 1;
   }
 
-  .lg\:placeholder-opacity-100::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-  }
-
   .lg\:placeholder-opacity-100::placeholder {
     --placeholder-opacity: 1;
-  }
-
-  .lg\:focus\:placeholder-opacity-0:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0;
   }
 
   .lg\:focus\:placeholder-opacity-0:focus::-moz-placeholder {
@@ -30554,16 +29601,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0;
   }
 
-  .lg\:focus\:placeholder-opacity-0:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0;
-  }
-
   .lg\:focus\:placeholder-opacity-0:focus::placeholder {
     --placeholder-opacity: 0;
-  }
-
-  .lg\:focus\:placeholder-opacity-25:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.25;
   }
 
   .lg\:focus\:placeholder-opacity-25:focus::-moz-placeholder {
@@ -30574,16 +29613,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.25;
   }
 
-  .lg\:focus\:placeholder-opacity-25:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.25;
-  }
-
   .lg\:focus\:placeholder-opacity-25:focus::placeholder {
     --placeholder-opacity: 0.25;
-  }
-
-  .lg\:focus\:placeholder-opacity-50:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.5;
   }
 
   .lg\:focus\:placeholder-opacity-50:focus::-moz-placeholder {
@@ -30594,16 +29625,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.5;
   }
 
-  .lg\:focus\:placeholder-opacity-50:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.5;
-  }
-
   .lg\:focus\:placeholder-opacity-50:focus::placeholder {
     --placeholder-opacity: 0.5;
-  }
-
-  .lg\:focus\:placeholder-opacity-75:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.75;
   }
 
   .lg\:focus\:placeholder-opacity-75:focus::-moz-placeholder {
@@ -30614,16 +29637,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.75;
   }
 
-  .lg\:focus\:placeholder-opacity-75:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.75;
-  }
-
   .lg\:focus\:placeholder-opacity-75:focus::placeholder {
     --placeholder-opacity: 0.75;
-  }
-
-  .lg\:focus\:placeholder-opacity-100:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
   }
 
   .lg\:focus\:placeholder-opacity-100:focus::-moz-placeholder {
@@ -30631,10 +29646,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 
   .lg\:focus\:placeholder-opacity-100:focus:-ms-input-placeholder {
-    --placeholder-opacity: 1;
-  }
-
-  .lg\:focus\:placeholder-opacity-100:focus::-ms-input-placeholder {
     --placeholder-opacity: 1;
   }
 
@@ -30667,7 +29678,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 
   .lg\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
@@ -38119,12 +37129,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     padding-left: 1px;
   }
 
-  .xl\:placeholder-primary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .xl\:placeholder-primary::-moz-placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
@@ -38137,22 +37141,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
-  .xl\:placeholder-primary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .xl\:placeholder-primary::placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
     color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
-  .xl\:placeholder-secondary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-secondary::-moz-placeholder {
@@ -38167,22 +37159,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
-  .xl\:placeholder-secondary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
   .xl\:placeholder-secondary::placeholder {
     --placeholder-opacity: 1;
     color: #8C87E6;
     color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
-  .xl\:placeholder-tertiary::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-tertiary::-moz-placeholder {
@@ -38197,22 +37177,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
-  .xl\:placeholder-tertiary::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
   .xl\:placeholder-tertiary::placeholder {
     --placeholder-opacity: 1;
     color: #444444;
     color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
-  .xl\:placeholder-error::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-error::-moz-placeholder {
@@ -38227,22 +37195,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
-  .xl\:placeholder-error::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
   .xl\:placeholder-error::placeholder {
     --placeholder-opacity: 1;
     color: #FF6363;
     color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
-  .xl\:placeholder-white::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-white::-moz-placeholder {
@@ -38257,22 +37213,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
-  .xl\:placeholder-white::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
   .xl\:placeholder-white::placeholder {
     --placeholder-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
-  .xl\:placeholder-lightGray::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-lightGray::-moz-placeholder {
@@ -38287,22 +37231,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
-  .xl\:placeholder-lightGray::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
   .xl\:placeholder-lightGray::placeholder {
     --placeholder-opacity: 1;
     color: #F9F9F9;
     color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
-  .xl\:placeholder-gray::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-gray::-moz-placeholder {
@@ -38317,20 +37249,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
-  .xl\:placeholder-gray::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
   .xl\:placeholder-gray::placeholder {
     --placeholder-opacity: 1;
     color: #F3F3F3;
     color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
-  .xl\:placeholder-transparent::-webkit-input-placeholder {
-    color: transparent;
   }
 
   .xl\:placeholder-transparent::-moz-placeholder {
@@ -38341,18 +37263,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: transparent;
   }
 
-  .xl\:placeholder-transparent::-ms-input-placeholder {
-    color: transparent;
-  }
-
   .xl\:placeholder-transparent::placeholder {
     color: transparent;
-  }
-
-  .xl\:focus\:placeholder-primary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-primary:focus::-moz-placeholder {
@@ -38367,22 +37279,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(108, 99, 255, var(--placeholder-opacity));
   }
 
-  .xl\:focus\:placeholder-primary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
   .xl\:focus\:placeholder-primary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #6C63FF;
     color: rgba(108, 99, 255, var(--placeholder-opacity));
-  }
-
-  .xl\:focus\:placeholder-secondary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-secondary:focus::-moz-placeholder {
@@ -38397,22 +37297,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(140, 135, 230, var(--placeholder-opacity));
   }
 
-  .xl\:focus\:placeholder-secondary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
   .xl\:focus\:placeholder-secondary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #8C87E6;
     color: rgba(140, 135, 230, var(--placeholder-opacity));
-  }
-
-  .xl\:focus\:placeholder-tertiary:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -38427,22 +37315,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(68, 68, 68, var(--placeholder-opacity));
   }
 
-  .xl\:focus\:placeholder-tertiary:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #444444;
-    color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
   .xl\:focus\:placeholder-tertiary:focus::placeholder {
     --placeholder-opacity: 1;
     color: #444444;
     color: rgba(68, 68, 68, var(--placeholder-opacity));
-  }
-
-  .xl\:focus\:placeholder-error:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-error:focus::-moz-placeholder {
@@ -38457,22 +37333,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 99, 99, var(--placeholder-opacity));
   }
 
-  .xl\:focus\:placeholder-error:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FF6363;
-    color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
   .xl\:focus\:placeholder-error:focus::placeholder {
     --placeholder-opacity: 1;
     color: #FF6363;
     color: rgba(255, 99, 99, var(--placeholder-opacity));
-  }
-
-  .xl\:focus\:placeholder-white:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-white:focus::-moz-placeholder {
@@ -38487,22 +37351,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(255, 255, 255, var(--placeholder-opacity));
   }
 
-  .xl\:focus\:placeholder-white:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
   .xl\:focus\:placeholder-white:focus::placeholder {
     --placeholder-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--placeholder-opacity));
-  }
-
-  .xl\:focus\:placeholder-lightGray:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-lightGray:focus::-moz-placeholder {
@@ -38517,22 +37369,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(249, 249, 249, var(--placeholder-opacity));
   }
 
-  .xl\:focus\:placeholder-lightGray:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F9F9F9;
-    color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
   .xl\:focus\:placeholder-lightGray:focus::placeholder {
     --placeholder-opacity: 1;
     color: #F9F9F9;
     color: rgba(249, 249, 249, var(--placeholder-opacity));
-  }
-
-  .xl\:focus\:placeholder-gray:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-gray:focus::-moz-placeholder {
@@ -38547,20 +37387,10 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: rgba(243, 243, 243, var(--placeholder-opacity));
   }
 
-  .xl\:focus\:placeholder-gray:focus::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-    color: #F3F3F3;
-    color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
   .xl\:focus\:placeholder-gray:focus::placeholder {
     --placeholder-opacity: 1;
     color: #F3F3F3;
     color: rgba(243, 243, 243, var(--placeholder-opacity));
-  }
-
-  .xl\:focus\:placeholder-transparent:focus::-webkit-input-placeholder {
-    color: transparent;
   }
 
   .xl\:focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -38571,16 +37401,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     color: transparent;
   }
 
-  .xl\:focus\:placeholder-transparent:focus::-ms-input-placeholder {
-    color: transparent;
-  }
-
   .xl\:focus\:placeholder-transparent:focus::placeholder {
     color: transparent;
-  }
-
-  .xl\:placeholder-opacity-0::-webkit-input-placeholder {
-    --placeholder-opacity: 0;
   }
 
   .xl\:placeholder-opacity-0::-moz-placeholder {
@@ -38591,16 +37413,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0;
   }
 
-  .xl\:placeholder-opacity-0::-ms-input-placeholder {
-    --placeholder-opacity: 0;
-  }
-
   .xl\:placeholder-opacity-0::placeholder {
     --placeholder-opacity: 0;
-  }
-
-  .xl\:placeholder-opacity-25::-webkit-input-placeholder {
-    --placeholder-opacity: 0.25;
   }
 
   .xl\:placeholder-opacity-25::-moz-placeholder {
@@ -38611,16 +37425,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.25;
   }
 
-  .xl\:placeholder-opacity-25::-ms-input-placeholder {
-    --placeholder-opacity: 0.25;
-  }
-
   .xl\:placeholder-opacity-25::placeholder {
     --placeholder-opacity: 0.25;
-  }
-
-  .xl\:placeholder-opacity-50::-webkit-input-placeholder {
-    --placeholder-opacity: 0.5;
   }
 
   .xl\:placeholder-opacity-50::-moz-placeholder {
@@ -38631,16 +37437,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.5;
   }
 
-  .xl\:placeholder-opacity-50::-ms-input-placeholder {
-    --placeholder-opacity: 0.5;
-  }
-
   .xl\:placeholder-opacity-50::placeholder {
     --placeholder-opacity: 0.5;
-  }
-
-  .xl\:placeholder-opacity-75::-webkit-input-placeholder {
-    --placeholder-opacity: 0.75;
   }
 
   .xl\:placeholder-opacity-75::-moz-placeholder {
@@ -38651,16 +37449,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.75;
   }
 
-  .xl\:placeholder-opacity-75::-ms-input-placeholder {
-    --placeholder-opacity: 0.75;
-  }
-
   .xl\:placeholder-opacity-75::placeholder {
     --placeholder-opacity: 0.75;
-  }
-
-  .xl\:placeholder-opacity-100::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
   }
 
   .xl\:placeholder-opacity-100::-moz-placeholder {
@@ -38671,16 +37461,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 1;
   }
 
-  .xl\:placeholder-opacity-100::-ms-input-placeholder {
-    --placeholder-opacity: 1;
-  }
-
   .xl\:placeholder-opacity-100::placeholder {
     --placeholder-opacity: 1;
-  }
-
-  .xl\:focus\:placeholder-opacity-0:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0;
   }
 
   .xl\:focus\:placeholder-opacity-0:focus::-moz-placeholder {
@@ -38691,16 +37473,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0;
   }
 
-  .xl\:focus\:placeholder-opacity-0:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0;
-  }
-
   .xl\:focus\:placeholder-opacity-0:focus::placeholder {
     --placeholder-opacity: 0;
-  }
-
-  .xl\:focus\:placeholder-opacity-25:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.25;
   }
 
   .xl\:focus\:placeholder-opacity-25:focus::-moz-placeholder {
@@ -38711,16 +37485,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.25;
   }
 
-  .xl\:focus\:placeholder-opacity-25:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.25;
-  }
-
   .xl\:focus\:placeholder-opacity-25:focus::placeholder {
     --placeholder-opacity: 0.25;
-  }
-
-  .xl\:focus\:placeholder-opacity-50:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.5;
   }
 
   .xl\:focus\:placeholder-opacity-50:focus::-moz-placeholder {
@@ -38731,16 +37497,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.5;
   }
 
-  .xl\:focus\:placeholder-opacity-50:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.5;
-  }
-
   .xl\:focus\:placeholder-opacity-50:focus::placeholder {
     --placeholder-opacity: 0.5;
-  }
-
-  .xl\:focus\:placeholder-opacity-75:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 0.75;
   }
 
   .xl\:focus\:placeholder-opacity-75:focus::-moz-placeholder {
@@ -38751,16 +37509,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     --placeholder-opacity: 0.75;
   }
 
-  .xl\:focus\:placeholder-opacity-75:focus::-ms-input-placeholder {
-    --placeholder-opacity: 0.75;
-  }
-
   .xl\:focus\:placeholder-opacity-75:focus::placeholder {
     --placeholder-opacity: 0.75;
-  }
-
-  .xl\:focus\:placeholder-opacity-100:focus::-webkit-input-placeholder {
-    --placeholder-opacity: 1;
   }
 
   .xl\:focus\:placeholder-opacity-100:focus::-moz-placeholder {
@@ -38768,10 +37518,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 
   .xl\:focus\:placeholder-opacity-100:focus:-ms-input-placeholder {
-    --placeholder-opacity: 1;
-  }
-
-  .xl\:focus\:placeholder-opacity-100:focus::-ms-input-placeholder {
     --placeholder-opacity: 1;
   }
 
@@ -38804,7 +37550,6 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
   }
 
   .xl\:sticky {
-    position: -webkit-sticky;
     position: sticky;
   }
 
