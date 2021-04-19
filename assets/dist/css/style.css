@@ -9029,6 +9029,10 @@ dialog[open] + .modal-overlay {
       height: 60px;
     }
 
+.header.is-sticky .nav__menu li {
+      font-size: 0.8rem
+    }
+
 .hero__tagline {
   display: flex;
   align-items: center;

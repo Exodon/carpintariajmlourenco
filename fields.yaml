@@ -195,7 +195,7 @@ tabs:
             tab: Sobre
             label: About Items 
             titleFrom: title
-            prompt: Add new about item
+            prompt: Adicionar mais um tópico
             type: repeater
             form:
                 fields:
@@ -203,34 +203,34 @@ tabs:
                         label: Icon (Material Icons)
                         type: text
                         default: alarm_on
-                        span: left
+                        span: right
                     title:
-                        label: Title
+                        label: Titulo
                         type: text
                         default: About
-                        span: right
+                        span: left
                     description:
-                        label: Description
+                        label: Descrição
                         type: textarea
         
         # TAB: TESTIMONIALS
         testimonial_title:
-            tab: Testimonial
-            label: Title 
+            tab: Testumunhos
+            label: Titulo 
             type: text
-            default: What our customers are saying
+            default: O que os clientes dizem
         
         testimonial_description:
-            tab: Testimonial
+            tab: Testumunhos
             label: Description 
             type: text
             default: Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi repudiandae.
 
         testimonials:
-            tab: Testimonial
+            tab: Testumunhos
             label: Testimonials
             titleFrom: name
-            prompt: Add new testimonial
+            prompt: Adicionar Mais Testumunhos
             type: repeater
             form:
                 fields:
@@ -254,16 +254,16 @@ tabs:
 
         # TAB: SERVICES
         service_title:
-            tab: Services 
+            tab: Serviços 
             label: Title 
             type: text 
             default: Serviços
         
         services:
-            tab: Services
+            tab: Serviços
             label: Services 
             titleFrom: title
-            prompt: Add new service
+            prompt: Adicionar Serviços
             type: repeater
             form:
                 fields:
@@ -279,33 +279,32 @@ tabs:
                         label: Description
                         type: textarea
                         span: right
-        # TAB: PRICING
-        pricing_title:
+        # TAB: Project
+        project_title:
             tab: Projectos 
             label: Title
             type: text
             default: Portfolio 
 
-        pricing_plans:
+        project_plans:
             tab: Projectos
             label: Nome do Projecto
-            titleFrom: plan_title
-            prompt: Add new plan
+            titleFrom: project_title
+            prompt: adicionar projecto
             type: repeater
             form:
                 fields:
-                    plan_title:
+                    project_title:
                         label: Nome do Projecto
                         type: text
-                    price:
+                    project_place:
                         label: Local 
                         type: text
-                        span: left
-                    plan_type:
+                    project_type:
                         label: Descrição Projecto
-                        type: text
+                        type: textarea
                         placeholder: Colocar Descrição
-                        span: right
+                        span: left
                     highlighted:
                         label: Highlighted
                         type: switch
@@ -313,7 +312,7 @@ tabs:
                             on: true
                             off: false
                         span: right
-                    plan_features:
+                    project_features:
                         label: Features
                         type: taglist
                     button_text:
@@ -327,18 +326,18 @@ tabs:
                         span: right
         # TAB: CONTACT
         contact_title:
-            tab: Contact
+            tab: Contactos
             label: Title
             type: text
             default: Contactos
 
         contact_description:
-            tab: Contact  
-            label: Description
-            type: textarea
-
+            tab: Contactos 
+            label: Descrição
+            type: text
+            placeholder: Colocar uma pequena Descrição
         contact_image:
-            tab: Contact
+            tab: Contactos
             label: Image
             type: mediafinder
             mode: image
