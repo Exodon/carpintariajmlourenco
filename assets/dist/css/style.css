@@ -592,6 +592,22 @@ video {
   overflow: hidden;
 }
 
+/* Accessibility help classes */
+
+.sr-only {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  margin: -1px;
+}
+
 body {
   font-weight: 300;
   line-height: 1.65;
@@ -660,8 +676,8 @@ h1, h2, h3, h4, h5 {
 
 .btn--primary {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
     --text-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--text-opacity));
@@ -669,35 +685,19 @@ h1, h2, h3, h4, h5 {
 
 .btn--primary:hover {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
 .btn--close {
     border : 0;
     box-shadow: none;
     border-radius: 0;
-    padding: 0;
+    padding: 10px;
   }
 
 .btn--close:hover {
     background-color: transparent;
-  }
-
-.btn--screen-read-only {
-    border : 0;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(50%);
-            clip-path: inset(50%);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
   }
 
 .input-group label {
@@ -779,8 +779,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
 
 .nav__menu li:hover {
       --text-opacity: 1;
-      color: #6C63FF;
-      color: rgba(108, 99, 255, var(--text-opacity));
+      color: #FDB725;
+      color: rgba(253, 183, 37, var(--text-opacity));
     }
 
 .nav__menu--active {
@@ -878,8 +878,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
         position: absolute;
         border-radius: 0.25rem;
         --bg-opacity: 1;
-        background-color: #6C63FF;
-        background-color: rgba(108, 99, 255, var(--bg-opacity));
+        background-color: #FDB725;
+        background-color: rgba(253, 183, 37, var(--bg-opacity));
       }
       .nav__menu li:hover {
         --text-opacity: 1;
@@ -913,8 +913,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
 
 .portfolio__item--active {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
     --text-opacity: 1;
     color: #FFFFFF;
     color: rgba(255, 255, 255, var(--text-opacity));
@@ -932,8 +932,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
 
 .portfolio__item-project span {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
     font-weight: 700;
     font-size: 2.25rem;
   }
@@ -969,8 +969,8 @@ input[type='email'].input--error + span, input[type='number'].input--error + spa
     height: 18px;
     width: 18px;
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
     border-radius: 9999px;
     margin-right: 0.75rem;
   }
@@ -1058,9 +1058,8 @@ dialog[open] + .modal-overlay {
 /* Close Icon */
 
 .close-icon-container {
-  position: relative;
-  height: 40px;
   width: 40px;
+  height: 40px;
 }
 
 .close-icon-container .close-icon {
@@ -1644,14 +1643,14 @@ dialog[open] + .modal-overlay {
 
 .divide-primary > :not(template) ~ :not(template) {
   --divide-opacity: 1;
-  border-color: #6C63FF;
-  border-color: rgba(108, 99, 255, var(--divide-opacity));
+  border-color: #FDB725;
+  border-color: rgba(253, 183, 37, var(--divide-opacity));
 }
 
 .divide-secondary > :not(template) ~ :not(template) {
   --divide-opacity: 1;
-  border-color: #8C87E6;
-  border-color: rgba(140, 135, 230, var(--divide-opacity));
+  border-color: #bb8a23;
+  border-color: rgba(187, 138, 35, var(--divide-opacity));
 }
 
 .divide-tertiary > :not(template) ~ :not(template) {
@@ -1774,14 +1773,14 @@ dialog[open] + .modal-overlay {
 
 .bg-primary {
   --bg-opacity: 1;
-  background-color: #6C63FF;
-  background-color: rgba(108, 99, 255, var(--bg-opacity));
+  background-color: #FDB725;
+  background-color: rgba(253, 183, 37, var(--bg-opacity));
 }
 
 .bg-secondary {
   --bg-opacity: 1;
-  background-color: #8C87E6;
-  background-color: rgba(140, 135, 230, var(--bg-opacity));
+  background-color: #bb8a23;
+  background-color: rgba(187, 138, 35, var(--bg-opacity));
 }
 
 .bg-tertiary {
@@ -1820,14 +1819,14 @@ dialog[open] + .modal-overlay {
 
 .hover\:bg-primary:hover {
   --bg-opacity: 1;
-  background-color: #6C63FF;
-  background-color: rgba(108, 99, 255, var(--bg-opacity));
+  background-color: #FDB725;
+  background-color: rgba(253, 183, 37, var(--bg-opacity));
 }
 
 .hover\:bg-secondary:hover {
   --bg-opacity: 1;
-  background-color: #8C87E6;
-  background-color: rgba(140, 135, 230, var(--bg-opacity));
+  background-color: #bb8a23;
+  background-color: rgba(187, 138, 35, var(--bg-opacity));
 }
 
 .hover\:bg-tertiary:hover {
@@ -1866,14 +1865,14 @@ dialog[open] + .modal-overlay {
 
 .focus\:bg-primary:focus {
   --bg-opacity: 1;
-  background-color: #6C63FF;
-  background-color: rgba(108, 99, 255, var(--bg-opacity));
+  background-color: #FDB725;
+  background-color: rgba(253, 183, 37, var(--bg-opacity));
 }
 
 .focus\:bg-secondary:focus {
   --bg-opacity: 1;
-  background-color: #8C87E6;
-  background-color: rgba(140, 135, 230, var(--bg-opacity));
+  background-color: #bb8a23;
+  background-color: rgba(187, 138, 35, var(--bg-opacity));
 }
 
 .focus\:bg-tertiary:focus {
@@ -2052,14 +2051,14 @@ dialog[open] + .modal-overlay {
 
 .border-primary {
   --border-opacity: 1;
-  border-color: #6C63FF;
-  border-color: rgba(108, 99, 255, var(--border-opacity));
+  border-color: #FDB725;
+  border-color: rgba(253, 183, 37, var(--border-opacity));
 }
 
 .border-secondary {
   --border-opacity: 1;
-  border-color: #8C87E6;
-  border-color: rgba(140, 135, 230, var(--border-opacity));
+  border-color: #bb8a23;
+  border-color: rgba(187, 138, 35, var(--border-opacity));
 }
 
 .border-tertiary {
@@ -2098,14 +2097,14 @@ dialog[open] + .modal-overlay {
 
 .hover\:border-primary:hover {
   --border-opacity: 1;
-  border-color: #6C63FF;
-  border-color: rgba(108, 99, 255, var(--border-opacity));
+  border-color: #FDB725;
+  border-color: rgba(253, 183, 37, var(--border-opacity));
 }
 
 .hover\:border-secondary:hover {
   --border-opacity: 1;
-  border-color: #8C87E6;
-  border-color: rgba(140, 135, 230, var(--border-opacity));
+  border-color: #bb8a23;
+  border-color: rgba(187, 138, 35, var(--border-opacity));
 }
 
 .hover\:border-tertiary:hover {
@@ -2144,14 +2143,14 @@ dialog[open] + .modal-overlay {
 
 .focus\:border-primary:focus {
   --border-opacity: 1;
-  border-color: #6C63FF;
-  border-color: rgba(108, 99, 255, var(--border-opacity));
+  border-color: #FDB725;
+  border-color: rgba(253, 183, 37, var(--border-opacity));
 }
 
 .focus\:border-secondary:focus {
   --border-opacity: 1;
-  border-color: #8C87E6;
-  border-color: rgba(140, 135, 230, var(--border-opacity));
+  border-color: #bb8a23;
+  border-color: rgba(187, 138, 35, var(--border-opacity));
 }
 
 .focus\:border-tertiary:focus {
@@ -5272,38 +5271,38 @@ dialog[open] + .modal-overlay {
 
 .placeholder-primary::-moz-placeholder {
   --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--placeholder-opacity));
 }
 
 .placeholder-primary:-ms-input-placeholder {
   --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--placeholder-opacity));
 }
 
 .placeholder-primary::placeholder {
   --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--placeholder-opacity));
 }
 
 .placeholder-secondary::-moz-placeholder {
   --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--placeholder-opacity));
 }
 
 .placeholder-secondary:-ms-input-placeholder {
   --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--placeholder-opacity));
 }
 
 .placeholder-secondary::placeholder {
   --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--placeholder-opacity));
 }
 
 .placeholder-tertiary::-moz-placeholder {
@@ -5410,38 +5409,38 @@ dialog[open] + .modal-overlay {
 
 .focus\:placeholder-primary:focus::-moz-placeholder {
   --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-primary:focus:-ms-input-placeholder {
   --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-primary:focus::placeholder {
   --placeholder-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--placeholder-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-secondary:focus::-moz-placeholder {
   --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-secondary:focus:-ms-input-placeholder {
   --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-secondary:focus::placeholder {
   --placeholder-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--placeholder-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -5942,14 +5941,14 @@ dialog[open] + .modal-overlay {
 
 .text-primary {
   --text-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--text-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--text-opacity));
 }
 
 .text-secondary {
   --text-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--text-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--text-opacity));
 }
 
 .text-tertiary {
@@ -5988,14 +5987,14 @@ dialog[open] + .modal-overlay {
 
 .hover\:text-primary:hover {
   --text-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--text-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--text-opacity));
 }
 
 .hover\:text-secondary:hover {
   --text-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--text-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--text-opacity));
 }
 
 .hover\:text-tertiary:hover {
@@ -6034,14 +6033,14 @@ dialog[open] + .modal-overlay {
 
 .focus\:text-primary:focus {
   --text-opacity: 1;
-  color: #6C63FF;
-  color: rgba(108, 99, 255, var(--text-opacity));
+  color: #FDB725;
+  color: rgba(253, 183, 37, var(--text-opacity));
 }
 
 .focus\:text-secondary:focus {
   --text-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--text-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--text-opacity));
 }
 
 .focus\:text-tertiary:focus {
@@ -9428,8 +9427,8 @@ dialog[open] + .modal-overlay {
 .glider-dot.active {
   outline: none !important;
   --bg-opacity: 1;
-  background-color: #8C87E6;
-  background-color: rgba(140, 135, 230, var(--bg-opacity));
+  background-color: #bb8a23;
+  background-color: rgba(187, 138, 35, var(--bg-opacity));
 }
 
 .glider-prev {
@@ -9447,8 +9446,8 @@ dialog[open] + .modal-overlay {
 .glider-prev:focus, 
 .glider-next:focus {
   --text-opacity: 1;
-  color: #8C87E6;
-  color: rgba(140, 135, 230, var(--text-opacity));
+  color: #bb8a23;
+  color: rgba(187, 138, 35, var(--text-opacity));
 }
 
 @media (min-width: 640px) {
@@ -9974,14 +9973,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:divide-primary > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--divide-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--divide-opacity));
   }
 
   .sm\:divide-secondary > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--divide-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--divide-opacity));
   }
 
   .sm\:divide-tertiary > :not(template) ~ :not(template) {
@@ -10104,14 +10103,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:bg-primary {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .sm\:bg-secondary {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .sm\:bg-tertiary {
@@ -10150,14 +10149,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:hover\:bg-primary:hover {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .sm\:hover\:bg-secondary:hover {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .sm\:hover\:bg-tertiary:hover {
@@ -10196,14 +10195,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:focus\:bg-primary:focus {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .sm\:focus\:bg-secondary:focus {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .sm\:focus\:bg-tertiary:focus {
@@ -10382,14 +10381,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:border-primary {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .sm\:border-secondary {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .sm\:border-tertiary {
@@ -10428,14 +10427,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:hover\:border-primary:hover {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .sm\:hover\:border-secondary:hover {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .sm\:hover\:border-tertiary:hover {
@@ -10474,14 +10473,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:focus\:border-primary:focus {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .sm\:focus\:border-secondary:focus {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .sm\:focus\:border-tertiary:focus {
@@ -13602,38 +13601,38 @@ dialog[open] + .modal-overlay {
 
   .sm\:placeholder-primary::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-primary:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-primary::placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-secondary::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-secondary:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-secondary::placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-tertiary::-moz-placeholder {
@@ -13740,38 +13739,38 @@ dialog[open] + .modal-overlay {
 
   .sm\:focus\:placeholder-primary:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-primary:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-primary:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-secondary:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-secondary:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-secondary:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -14272,14 +14271,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:text-primary {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .sm\:text-secondary {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .sm\:text-tertiary {
@@ -14318,14 +14317,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:hover\:text-primary:hover {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .sm\:hover\:text-secondary:hover {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .sm\:hover\:text-tertiary:hover {
@@ -14364,14 +14363,14 @@ dialog[open] + .modal-overlay {
 
   .sm\:focus\:text-primary:focus {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .sm\:focus\:text-secondary:focus {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .sm\:focus\:text-tertiary:focus {
@@ -17846,14 +17845,14 @@ dialog[open] + .modal-overlay {
 
   .md\:divide-primary > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--divide-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--divide-opacity));
   }
 
   .md\:divide-secondary > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--divide-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--divide-opacity));
   }
 
   .md\:divide-tertiary > :not(template) ~ :not(template) {
@@ -17976,14 +17975,14 @@ dialog[open] + .modal-overlay {
 
   .md\:bg-primary {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .md\:bg-secondary {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .md\:bg-tertiary {
@@ -18022,14 +18021,14 @@ dialog[open] + .modal-overlay {
 
   .md\:hover\:bg-primary:hover {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .md\:hover\:bg-secondary:hover {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .md\:hover\:bg-tertiary:hover {
@@ -18068,14 +18067,14 @@ dialog[open] + .modal-overlay {
 
   .md\:focus\:bg-primary:focus {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .md\:focus\:bg-secondary:focus {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .md\:focus\:bg-tertiary:focus {
@@ -18254,14 +18253,14 @@ dialog[open] + .modal-overlay {
 
   .md\:border-primary {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .md\:border-secondary {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .md\:border-tertiary {
@@ -18300,14 +18299,14 @@ dialog[open] + .modal-overlay {
 
   .md\:hover\:border-primary:hover {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .md\:hover\:border-secondary:hover {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .md\:hover\:border-tertiary:hover {
@@ -18346,14 +18345,14 @@ dialog[open] + .modal-overlay {
 
   .md\:focus\:border-primary:focus {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .md\:focus\:border-secondary:focus {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .md\:focus\:border-tertiary:focus {
@@ -21474,38 +21473,38 @@ dialog[open] + .modal-overlay {
 
   .md\:placeholder-primary::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .md\:placeholder-primary:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .md\:placeholder-primary::placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .md\:placeholder-secondary::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .md\:placeholder-secondary:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .md\:placeholder-secondary::placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .md\:placeholder-tertiary::-moz-placeholder {
@@ -21612,38 +21611,38 @@ dialog[open] + .modal-overlay {
 
   .md\:focus\:placeholder-primary:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-primary:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-primary:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-secondary:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-secondary:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-secondary:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -22144,14 +22143,14 @@ dialog[open] + .modal-overlay {
 
   .md\:text-primary {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .md\:text-secondary {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .md\:text-tertiary {
@@ -22190,14 +22189,14 @@ dialog[open] + .modal-overlay {
 
   .md\:hover\:text-primary:hover {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .md\:hover\:text-secondary:hover {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .md\:hover\:text-tertiary:hover {
@@ -22236,14 +22235,14 @@ dialog[open] + .modal-overlay {
 
   .md\:focus\:text-primary:focus {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .md\:focus\:text-secondary:focus {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .md\:focus\:text-tertiary:focus {
@@ -25718,14 +25717,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:divide-primary > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--divide-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--divide-opacity));
   }
 
   .lg\:divide-secondary > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--divide-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--divide-opacity));
   }
 
   .lg\:divide-tertiary > :not(template) ~ :not(template) {
@@ -25848,14 +25847,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:bg-primary {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .lg\:bg-secondary {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .lg\:bg-tertiary {
@@ -25894,14 +25893,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:hover\:bg-primary:hover {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .lg\:hover\:bg-secondary:hover {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .lg\:hover\:bg-tertiary:hover {
@@ -25940,14 +25939,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:focus\:bg-primary:focus {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .lg\:focus\:bg-secondary:focus {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .lg\:focus\:bg-tertiary:focus {
@@ -26126,14 +26125,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:border-primary {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .lg\:border-secondary {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .lg\:border-tertiary {
@@ -26172,14 +26171,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:hover\:border-primary:hover {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .lg\:hover\:border-secondary:hover {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .lg\:hover\:border-tertiary:hover {
@@ -26218,14 +26217,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:focus\:border-primary:focus {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .lg\:focus\:border-secondary:focus {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .lg\:focus\:border-tertiary:focus {
@@ -29346,38 +29345,38 @@ dialog[open] + .modal-overlay {
 
   .lg\:placeholder-primary::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-primary:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-primary::placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-secondary::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-secondary:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-secondary::placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-tertiary::-moz-placeholder {
@@ -29484,38 +29483,38 @@ dialog[open] + .modal-overlay {
 
   .lg\:focus\:placeholder-primary:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-primary:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-primary:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-secondary:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-secondary:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-secondary:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -30016,14 +30015,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:text-primary {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .lg\:text-secondary {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .lg\:text-tertiary {
@@ -30062,14 +30061,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:hover\:text-primary:hover {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .lg\:hover\:text-secondary:hover {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .lg\:hover\:text-tertiary:hover {
@@ -30108,14 +30107,14 @@ dialog[open] + .modal-overlay {
 
   .lg\:focus\:text-primary:focus {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .lg\:focus\:text-secondary:focus {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .lg\:focus\:text-tertiary:focus {
@@ -33590,14 +33589,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:divide-primary > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--divide-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--divide-opacity));
   }
 
   .xl\:divide-secondary > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--divide-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--divide-opacity));
   }
 
   .xl\:divide-tertiary > :not(template) ~ :not(template) {
@@ -33720,14 +33719,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:bg-primary {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .xl\:bg-secondary {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .xl\:bg-tertiary {
@@ -33766,14 +33765,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:hover\:bg-primary:hover {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .xl\:hover\:bg-secondary:hover {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .xl\:hover\:bg-tertiary:hover {
@@ -33812,14 +33811,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:focus\:bg-primary:focus {
     --bg-opacity: 1;
-    background-color: #6C63FF;
-    background-color: rgba(108, 99, 255, var(--bg-opacity));
+    background-color: #FDB725;
+    background-color: rgba(253, 183, 37, var(--bg-opacity));
   }
 
   .xl\:focus\:bg-secondary:focus {
     --bg-opacity: 1;
-    background-color: #8C87E6;
-    background-color: rgba(140, 135, 230, var(--bg-opacity));
+    background-color: #bb8a23;
+    background-color: rgba(187, 138, 35, var(--bg-opacity));
   }
 
   .xl\:focus\:bg-tertiary:focus {
@@ -33998,14 +33997,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:border-primary {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .xl\:border-secondary {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .xl\:border-tertiary {
@@ -34044,14 +34043,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:hover\:border-primary:hover {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .xl\:hover\:border-secondary:hover {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .xl\:hover\:border-tertiary:hover {
@@ -34090,14 +34089,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:focus\:border-primary:focus {
     --border-opacity: 1;
-    border-color: #6C63FF;
-    border-color: rgba(108, 99, 255, var(--border-opacity));
+    border-color: #FDB725;
+    border-color: rgba(253, 183, 37, var(--border-opacity));
   }
 
   .xl\:focus\:border-secondary:focus {
     --border-opacity: 1;
-    border-color: #8C87E6;
-    border-color: rgba(140, 135, 230, var(--border-opacity));
+    border-color: #bb8a23;
+    border-color: rgba(187, 138, 35, var(--border-opacity));
   }
 
   .xl\:focus\:border-tertiary:focus {
@@ -37218,38 +37217,38 @@ dialog[open] + .modal-overlay {
 
   .xl\:placeholder-primary::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-primary:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-primary::placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-secondary::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-secondary:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-secondary::placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-tertiary::-moz-placeholder {
@@ -37356,38 +37355,38 @@ dialog[open] + .modal-overlay {
 
   .xl\:focus\:placeholder-primary:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-primary:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-primary:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--placeholder-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-secondary:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-secondary:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-secondary:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--placeholder-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-tertiary:focus::-moz-placeholder {
@@ -37888,14 +37887,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:text-primary {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .xl\:text-secondary {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .xl\:text-tertiary {
@@ -37934,14 +37933,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:hover\:text-primary:hover {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .xl\:hover\:text-secondary:hover {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .xl\:hover\:text-tertiary:hover {
@@ -37980,14 +37979,14 @@ dialog[open] + .modal-overlay {
 
   .xl\:focus\:text-primary:focus {
     --text-opacity: 1;
-    color: #6C63FF;
-    color: rgba(108, 99, 255, var(--text-opacity));
+    color: #FDB725;
+    color: rgba(253, 183, 37, var(--text-opacity));
   }
 
   .xl\:focus\:text-secondary:focus {
     --text-opacity: 1;
-    color: #8C87E6;
-    color: rgba(140, 135, 230, var(--text-opacity));
+    color: #bb8a23;
+    color: rgba(187, 138, 35, var(--text-opacity));
   }
 
   .xl\:focus\:text-tertiary:focus {

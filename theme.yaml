@@ -1,7 +1,7 @@
-name: Zenii
-description: 'A free flat landing page theme using Tailwindcss'
+name: Carpintaria JM Lourenço
+description: 'Carpintaria JM Lourenço'
 previewImage: 'assets/dist/images/preview.jpg'
-author: 'The Bakerdev'
-homepage: 'http://octobercms.com'
-code: ''
+author: 'Carpintaria JM Lourenço'
+homepage: 'https://www.carpintariajmlourenco.pt/'
+code: 'verson 1.0'
 form: fields.yaml

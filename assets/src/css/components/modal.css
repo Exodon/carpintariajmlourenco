@@ -67,10 +67,8 @@ dialog[open] + .modal-overlay {
 /* Close Icon */
 
 .close-icon-container {
-  position: relative;
-  height: 40px;
   width: 40px;
-
+  height: 40px;
   .close-icon {
     cursor: pointer;
   

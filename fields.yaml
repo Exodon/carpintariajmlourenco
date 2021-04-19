@@ -5,19 +5,19 @@ tabs:
             tab: Basic Info
             label: Website Name
             type: text
-            default: Zenii
+            default: Carpintaria JM Lourenço
     
         website_author:
             tab: Basic Info
             label: Author
             type: text
-            default: The Baker Dev
+            default: Carpintaria JM Lourenço
     
         website_url:
             tab: Basic Info
             label: URL
             type: text
-            default: http://template.thebakerdev.com/zenii
+            default: https://www.carpintariajmlourenco.pt/
     
         description:
             tab: Basic Info
@@ -49,8 +49,8 @@ tabs:
             tab: Theme Colors
             label: Primary 
             type: colorpicker
-            availableColors: ["#6C63FF","#FC8181","#F6AD55","#F6E05E","#68D391","#4FD1C5","#63B3ED","#7F9CF5","#B794F4","#F687B3"]
-            default: "#6C63FF"
+            availableColors: ["#FDB725","#FC8181","#F6AD55","#F6E05E","#68D391","#4FD1C5","#63B3ED","#7F9CF5","#B794F4","#F687B3"]
+            default: "#FDB725"
             assetVar: "override-color-primary"
         
         override_color_secondary:
@@ -90,13 +90,13 @@ tabs:
             tab: Company Info
             label: Title
             type: text
-            default: Contact Info
+            default: Contactos
 
         company_address:
             tab: Company Info 
             label: Address
             type: text
-            default: Your company address
+            default: Lugar das Seisseiras S/N 7630-671 S. Teotónio
             span: left
         
         company_address_icon:
@@ -110,7 +110,7 @@ tabs:
             tab: Company Info 
             label: Contact Number 
             type: text
-            default: (541) 754-3010
+            default: 00351 962 466 055 / 00351 962 946 331
             span: left
 
         company_contact_number_icon:
@@ -124,7 +124,7 @@ tabs:
             tab: Company Info 
             label: Email 
             type: text
-            default: email@email.com
+            default: carpintaria.jmlourenco@gmail.com
             span: left
         
         company_email_icon:
@@ -174,25 +174,25 @@ tabs:
 
         # TAB: ABOUT
         about_title:
-            tab: About
-            label: Title 
+            tab: Sobre
+            label: Titulo 
             type: text
-            default: About us
+            default: Sobre Nós
         
         about_description:
-            tab: About  
-            label: Description 
+            tab: Sobre  
+            label: Descrição 
             type: textarea
             default: Tail aliquip labore pig sirloin pork prosciutto landjaeger ham, cupim adipisicing eiusmod sunt. Strip steak sausage shank kielbasa fatback pork belly.
         
         about_image:
-            tab: About
-            label: About Image
+            tab: Sobre
+            label: Imagem
             type: mediafinder
             mode: image
 
         about_items:
-            tab: About
+            tab: Sobre
             label: About Items 
             titleFrom: title
             prompt: Add new about item
@@ -228,7 +228,7 @@ tabs:
 
         testimonials:
             tab: Testimonial
-            label: Testimonials 
+            label: Testimonials
             titleFrom: name
             prompt: Add new testimonial
             type: repeater
@@ -257,7 +257,7 @@ tabs:
             tab: Services 
             label: Title 
             type: text 
-            default: Services
+            default: Serviços
         
         services:
             tab: Services
@@ -281,36 +281,31 @@ tabs:
                         span: right
         # TAB: PRICING
         pricing_title:
-            tab: Pricing 
+            tab: Projectos 
             label: Title
             type: text
-            default: Pricing 
+            default: Portfolio 
 
         pricing_plans:
-            tab: Pricing
-            label: Pricing Plans 
+            tab: Projectos
+            label: Nome do Projecto
             titleFrom: plan_title
             prompt: Add new plan
             type: repeater
             form:
                 fields:
                     plan_title:
-                        label: Plan Title
+                        label: Nome do Projecto
                         type: text
-                    currency:
-                        label: Currency
-                        type: text
-                        placeholder: $
-                        span: left
                     price:
-                        label: Price 
+                        label: Local 
                         type: text
-                        span: right
-                    plan_type:
-                        label: Plan Type
-                        type: text
-                        placeholder: mo/person/month
                         span: left
+                    plan_type:
+                        label: Descrição Projecto
+                        type: text
+                        placeholder: Colocar Descrição
+                        span: right
                     highlighted:
                         label: Highlighted
                         type: switch
@@ -322,9 +317,9 @@ tabs:
                         label: Features
                         type: taglist
                     button_text:
-                        label: Button Text
+                        label: Texto Botão
                         type: text
-                        default: Subscribe
+                        default: Mais info
                         span: left 
                     button_url:
                         label: Button URL
@@ -335,7 +330,7 @@ tabs:
             tab: Contact
             label: Title
             type: text
-            default: Contact
+            default: Contactos
 
         contact_description:
             tab: Contact  
