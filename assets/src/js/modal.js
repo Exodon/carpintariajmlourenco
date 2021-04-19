@@ -1,5 +1,4 @@
-import swiper from './swiper';
-
+//TODO : problem with js model is creating a error
 const modal = (function () {
 
     // select the open-btn button
